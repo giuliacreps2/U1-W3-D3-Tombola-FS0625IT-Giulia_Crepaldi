@@ -29,7 +29,7 @@ const createCellsInTombola = function () {
     const numberCell = document.createElement("div");
     const numberCellValue = document.createElement("h3");
     numberCellValue.innerText = i + 1;
-    numberCellValue.classList = "square";
+    numberCellValue.classList.add("square");
     numberCell.appendChild(numberCellValue);
     // appendo la cella al calendario
     tombolaSection.appendChild(numberCell);
@@ -38,20 +38,27 @@ const createCellsInTombola = function () {
 
 createCellsInTombola();
 
-//-- CREARE COLLEGAMENTO CASELLA/NUMERO ESTRATTO --
-
 //-- CREARE IL BOTTONE CON IL NUMERO RANDOMICO
 // recupera il bottone
 
 const dice = document.querySelector("#dice button");
+
 dice.addEventListener("click", function () {
   const randomNumber = Math.ceil(Math.random() * 90);
   console.log("NUMERO ESTRATTO!", randomNumber);
+
+  const cells = document.querySelectorAll("#board .square");
+  console.log(cells);
+
+  for (let i = 0; i < cells.length; i++) {
+    console.log(cells[i]);
+    if (parseInt(cells[i].textContent) === randomNumber) {
+      cells[i].classList.add("squareTrick");
+    }
+  }
 });
 
-// qui puoi evidenziare il numero sul tabellone
-// per esempio:
-// highlightNumber(randomNumber);
+//-- CREARE COLLEGAMENTO CASELLA/NUMERO ESTRATTO --
 
 /*-- CREARE IL BOTTONE CON IL NUMERO RANDOMICO
 

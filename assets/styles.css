@@ -32,15 +32,21 @@ h1 {
 
 .square {
   display: inline-block;
-  width: 5%;
+  width: 2%;
   height: 20px;
   position: relative;
-  border: 1px solid transparent;
+  border: 1px solid black;
   border-radius: 8px;
 }
 
 .squareTrick {
   background-color: yellow;
+  display: inline-block;
+  width: 5%;
+  height: 20px;
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 8px;
 }
 
 button {
@@ -54,7 +60,7 @@ button {
   min-height: 120px;
   font-weight: 700;
   cursor: pointer;
-  margin: 100px;
+  margin: 0 auto;
 }
 
 button:hover {
