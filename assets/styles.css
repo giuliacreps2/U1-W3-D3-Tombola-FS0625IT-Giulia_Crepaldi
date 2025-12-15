@@ -23,6 +23,26 @@ h1 {
   text-align: center;
 }
 
+#board {
+  border-radius: 8px;
+  border: 2px solid #a8101a;
+  margin: 20px;
+  background-color: #fffff0;
+}
+
+.square {
+  display: inline-block;
+  width: 5%;
+  height: 20px;
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
+.squareTrick {
+  background-color: yellow;
+}
+
 button {
   cursor: pointer;
   background-color: #c1121f;

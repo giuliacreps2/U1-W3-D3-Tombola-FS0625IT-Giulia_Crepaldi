@@ -29,6 +29,7 @@ const createCellsInTombola = function () {
     const numberCell = document.createElement("div");
     const numberCellValue = document.createElement("h3");
     numberCellValue.innerText = i + 1;
+    numberCellValue.classList = "square";
     numberCell.appendChild(numberCellValue);
     // appendo la cella al calendario
     tombolaSection.appendChild(numberCell);
@@ -36,6 +37,26 @@ const createCellsInTombola = function () {
 };
 
 createCellsInTombola();
+
+//-- CREARE COLLEGAMENTO CASELLA/NUMERO ESTRATTO --
+
+//-- CREARE IL BOTTONE CON IL NUMERO RANDOMICO
+// recupera il bottone
+
+const dice = document.querySelector("#dice button");
+dice.addEventListener("click", function () {
+  const randomNumber = Math.ceil(Math.random() * 90);
+  console.log("NUMERO ESTRATTO!", randomNumber);
+});
+
+// qui puoi evidenziare il numero sul tabellone
+// per esempio:
+// highlightNumber(randomNumber);
+
+/*-- CREARE IL BOTTONE CON IL NUMERO RANDOMICO
+
+dice.addEventListener("click", randomNumbers);
+console.log("CLICCATA CELLA!", randomNumbers);*/
 
 /* illuminiamo la cella del giorno corrispondente in modo permanente
 if (i +1 === //al numero randomico estratto) {
